@@ -14,7 +14,7 @@ public class Customer {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "customer_id")
-    private Integer customer_id;
+    private Integer customerId;
     @Column(name = "first_name")
     private String firstName;
     @Column(name = "last_name")
@@ -26,8 +26,8 @@ public class Customer {
     public Customer() {
     }
 
-    public Customer(Integer customer_id, String firstName, String lastName, String email, String password, String mobile) {
-        this.customer_id = customer_id;
+    public Customer(Integer customerId, String firstName, String lastName, String email, String password, String mobile) {
+        this.customerId = customerId;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -43,12 +43,12 @@ public class Customer {
         this.mobile = mobile;
     }
 
-    public Integer getCustomer_id() {
-        return customer_id;
+    public Integer getCustomerId() {
+        return customerId;
     }
 
-    public void setCustomer_id(Integer customer_id) {
-        this.customer_id = customer_id;
+    public void setCustomerId(Integer customerId) {
+        this.customerId = customerId;
     }
 
     public String getFirstName() {
@@ -96,18 +96,18 @@ public class Customer {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Customer customer = (Customer) o;
-        return Objects.equals(customer_id, customer.customer_id) && Objects.equals(firstName, customer.firstName) && Objects.equals(lastName, customer.lastName) && Objects.equals(email, customer.email) && Objects.equals(password, customer.password) && Objects.equals(mobile, customer.mobile);
+        return Objects.equals(customerId, customer.customerId) && Objects.equals(firstName, customer.firstName) && Objects.equals(lastName, customer.lastName) && Objects.equals(email, customer.email) && Objects.equals(password, customer.password) && Objects.equals(mobile, customer.mobile);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(customer_id, firstName, lastName, email, password, mobile);
+        return Objects.hash(customerId, firstName, lastName, email, password, mobile);
     }
 
     @Override
     public String toString() {
         return "Customer{" +
-                "customer_id=" + customer_id +
+                "customerId=" + customerId +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +

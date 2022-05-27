@@ -13,7 +13,7 @@ public class Train {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "train_id")
-    private Integer train_id;
+    private Integer trainId;
     private String name;
     private String model;
     private String manufacturer;
@@ -28,8 +28,8 @@ public class Train {
     public Train() {
     }
 
-    public Train(Integer train_id, String name, String model, String manufacturer, String year, String totalSeats, String seatLayout, String powerType) {
-        this.train_id = train_id;
+    public Train(Integer trainId, String name, String model, String manufacturer, String year, String totalSeats, String seatLayout, String powerType) {
+        this.trainId = trainId;
         this.name = name;
         this.model = model;
         this.manufacturer = manufacturer;
@@ -49,12 +49,12 @@ public class Train {
         this.powerType = powerType;
     }
 
-    public Integer getTrain_id() {
-        return train_id;
+    public Integer getTrainId() {
+        return trainId;
     }
 
-    public void setTrain_id(Integer train_id) {
-        this.train_id = train_id;
+    public void setTrainId(Integer trainId) {
+        this.trainId = trainId;
     }
 
     public String getName() {
@@ -118,18 +118,18 @@ public class Train {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Train train = (Train) o;
-        return Objects.equals(train_id, train.train_id) && Objects.equals(name, train.name) && Objects.equals(model, train.model) && Objects.equals(manufacturer, train.manufacturer) && Objects.equals(year, train.year) && Objects.equals(totalSeats, train.totalSeats) && Objects.equals(seatLayout, train.seatLayout) && Objects.equals(powerType, train.powerType);
+        return Objects.equals(trainId, train.trainId) && Objects.equals(name, train.name) && Objects.equals(model, train.model) && Objects.equals(manufacturer, train.manufacturer) && Objects.equals(year, train.year) && Objects.equals(totalSeats, train.totalSeats) && Objects.equals(seatLayout, train.seatLayout) && Objects.equals(powerType, train.powerType);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(train_id, name, model, manufacturer, year, totalSeats, seatLayout, powerType);
+        return Objects.hash(trainId, name, model, manufacturer, year, totalSeats, seatLayout, powerType);
     }
 
     @Override
     public String toString() {
         return "Train{" +
-                "train_id=" + train_id +
+                "trainId=" + trainId +
                 ", name='" + name + '\'' +
                 ", model='" + model + '\'' +
                 ", manufacturer='" + manufacturer + '\'' +
