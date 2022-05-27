@@ -14,23 +14,18 @@ public class Ticket {
     private Integer ticketId;
 
     @Column(name = "route_id")
-    @OneToOne(mappedBy = "route")
     private Integer routeId;
 
     @Column(name = "customer_id")
-    @OneToOne(mappedBy = "route")
     private Integer customerId;
 
     @Column(name = "first_name")
-    @OneToOne(mappedBy = "firstName")
     private String firstName;
 
     @Column(name = "source_station_id")
-    @OneToOne(mappedBy = "station")
     private Integer sourceStationId;
 
     @Column(name = "destination_station_id")
-    @OneToOne(mappedBy = "station")
     private Integer destinationStationId;
 
     private double price;
