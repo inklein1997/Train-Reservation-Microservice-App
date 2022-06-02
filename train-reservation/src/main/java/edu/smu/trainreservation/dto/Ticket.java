@@ -1,16 +1,18 @@
 package edu.smu.trainreservation.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 @Table(name = "ticket")
 public class Ticket {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "ticket_id")
     private Integer ticketId;
 
@@ -31,6 +33,7 @@ public class Ticket {
 
     private double price;
 
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date ticketDate;
 
     @Column(name = "seat_no")

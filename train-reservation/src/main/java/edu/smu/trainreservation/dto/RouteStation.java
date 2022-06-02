@@ -1,13 +1,14 @@
 package edu.smu.trainreservation.dto;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.util.Date;
 import java.util.Objects;
 
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 @Table(name = "route_station")
 public class RouteStation {
     @Id
@@ -22,9 +23,11 @@ public class RouteStation {
     private Integer stationId;
 
     @Column(name = "scheduled_arrival")
+    @DateTimeFormat(pattern = "HH:MM:SS")
     private Date scheduledArrival;
 
     @Column(name = "scheduled_departure")
+    @DateTimeFormat(pattern = "HH:MM:SS")
     private Date scheduledDeparture;
 
     public RouteStation() {

@@ -28,6 +28,16 @@ public class ServiceLayer {
         this.trainRepository = trainRepository;
     }
 
+    public void clearDatabase() {
+        customerRepository.deleteAll();
+        routeRepository.deleteAll();
+        routeStationRepository.deleteAll();
+        stationRepository.deleteAll();
+        ticketRepository.deleteAll();
+        ticketRepository.deleteAll();
+        trainRepository.deleteAll();
+    }
+
     // READ METHODS
 
     public List<Customer> getAllCustomers() {

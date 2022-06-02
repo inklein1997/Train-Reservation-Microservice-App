@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@JsonIgnoreProperties({"hibernateLazyInitializer"})
+@JsonIgnoreProperties({"hibernateLazyInitializer","handler"})
 @Table(name = "train")
 public class Train {
 
@@ -19,7 +19,7 @@ public class Train {
     private String manufacturer;
     private String year;
     @Column(name = "total_seats")
-    private String totalSeats;
+    private int totalSeats;
     @Column(name = "seat_layout")
     private String seatLayout;
     @Column(name = "power_type")
@@ -28,7 +28,7 @@ public class Train {
     public Train() {
     }
 
-    public Train(Integer trainId, String name, String model, String manufacturer, String year, String totalSeats, String seatLayout, String powerType) {
+    public Train(Integer trainId, String name, String model, String manufacturer, String year, int totalSeats, String seatLayout, String powerType) {
         this.trainId = trainId;
         this.name = name;
         this.model = model;
@@ -39,7 +39,7 @@ public class Train {
         this.powerType = powerType;
     }
 
-    public Train(String name, String model, String manufacturer, String year, String totalSeats, String seatLayout, String powerType) {
+    public Train(String name, String model, String manufacturer, String year, int totalSeats, String seatLayout, String powerType) {
         this.name = name;
         this.model = model;
         this.manufacturer = manufacturer;
@@ -89,11 +89,11 @@ public class Train {
         this.year = year;
     }
 
-    public String getTotalSeats() {
+    public int getTotalSeats() {
         return totalSeats;
     }
 
-    public void setTotalSeats(String totalSeats) {
+    public void setTotalSeats(int totalSeats) {
         this.totalSeats = totalSeats;
     }
 
